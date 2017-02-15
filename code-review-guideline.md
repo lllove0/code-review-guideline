@@ -13,15 +13,32 @@
 
 ## 流程
 
-![CodeReviewFlow](./code-review-flow.png)
+**参与人员定义：**
+1. PM：产品管理
+2. DEVELOPER：开发人员
+3. REVIEW：Review人
 
-1. 使用 Issue 创建开发需求，最好能够对需求进行详细的描述和说明。
-2. 在创建的 Issue 里面可以直接 Create New Branch。
-3. 开发完成后，在自测无误情况下，可以发起一个 Merge Request 并且指定 Assign 人员处理最终的合并请求.
-4. 在 Comments 里面可以 @reviewers 确认参加此次 review 的成员以及时间等事项。
-5. 为了能够及时响应问题，减少分歧，增进交流，请尽量选择 Face-To-Face 的方式来进行 code review。
-6. 对于 Code Review 中提出的问题可以记录在 comments 中，然后根据 Comments 进行修改。
-7. 问题修改完成后，可以 @reviewer （提出该问题的人），进行确认。
+**流程解析及主要事项：**
+1. (PM) 新建 Issue：在 GitLab 上创建新的 Issue（开发需求），要求对需求进行详细的描述和说明。
+2. (Developer) 创建开发分支：针对 PM 的 Issue，通过 Issue 面板，创建开发分支。
+3. (Developer) 需求研发：针对此 Issue，进行需求研发。
+4. (Developer) 提交合并请求：研发完成之后，在自测无误且跑完自动化测试脚本之后，可以发起一个 Merge Request 请求。
+5. (Developer) 查看是否冲突：在 Issue 面板，查看提交的 Merge Request 是否有冲突。
+6. (Developer) 如果提交的 Merge Request 有冲突，则将 Develop 分支合并到自身的 Issue 分支并完成冲突解决，重复步骤5。
+7. (Developer) 如果提交的 Merge Request 没冲突，则将此次合并请求Assign 给 Reviewer，并在评论中 @Reviewers，确认此次 Review 成员及时间等事项。
+8. (Reviewer) 收到 Merge 通知：Reviewer 可通过邮件或者 GitLab 消息面板查看 Merge 请求通知。
+9. (Reviewer) Review 代码：针对此次提交，进行 Review，主要针对代码格式、业务逻辑等方面进行验收，具体可参看 Review 的具体实施。考虑到问题的及时响应、减少分歧以及增进交流，这里推荐尽量选择 Face-To-Face 的方式来进行 Review。
+10. (Reviewer) 是否有问题：针对一系列验收及讨论，判断本次Merge是否存在问题。
+11. (Reviewer) 如果没问题，则接受合并请求，完成本次合并。
+12. (Reviewer) 如果有问题，则在代码上进行评论，并描述清楚问题及建议。
+13. (Developer) 接收 Merge 反馈：开发者可通过邮件或GitLab通知面板，查看本次 Merge 反馈。
+14. (Developer) 修改代码：针对 Merge 反馈，对自身代码进行修正调整，并 @Reviewers 进行问题确认，之后重复步骤5。
+
+### 开发者流程
+
+
+### Reviewer 流程
+
 
 ## Code Review 的具体实施
 
