@@ -13,12 +13,16 @@
 
 ## 流程
 
+![GitlabReviewWorkflow](./gitlab-review-workflow.png)
+
 **参与人员定义：**
+
 1. PM：产品管理
 2. DEVELOPER：开发人员
 3. REVIEW：Review人
 
 **流程解析及主要事项：**
+
 1. (PM) 新建 Issue：在 GitLab 上创建新的 Issue（开发需求），要求对需求进行详细的描述和说明。
 2. (Developer) 创建开发分支：针对 PM 的 Issue，通过 Issue 面板，创建开发分支。
 3. (Developer) 需求研发：针对此 Issue，进行需求研发。
